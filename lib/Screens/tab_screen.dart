@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import './create_post_screen.dart';
+import './profile_screen.dart';
+import './read_ans_screen.dart';
+
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -18,22 +22,15 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   List<Widget> _pageOptions = [
-    Container(
-      color: Colors.green,
-    ),
-    Container(
-      color: Colors.black,
-    ),
-    Container(
-      color: Colors.red,
-    ),
+    ReadScreen(),
+    CreatePostScreen(),
+    ProfileScreen(),
   ];
   int _selectedPage = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        
         currentIndex: _selectedPage,
         onTap: (index) {
           setState(() {
@@ -60,3 +57,8 @@ class _MainPageState extends State<MainPage> {
     );
   }
 }
+
+
+
+
+
