@@ -1,5 +1,6 @@
-import 'package:blog/tab_screen.dart';
 import 'package:flutter/material.dart';
+
+import './Screens/tab_screen.dart';
 
 void main() => runApp(MyApp());
 
