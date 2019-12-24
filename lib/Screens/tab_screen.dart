@@ -1,6 +1,7 @@
+import 'package:blog/Screens/my_post_tab.dart';
 import 'package:flutter/material.dart';
 
-import './create_post_screen.dart';
+import './my_post_tab.dart';
 
 import './read_ans_screen.dart';
 
@@ -23,8 +24,13 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   List<Widget> _pageOptions = [
     ReadScreen(),
-    CreatePostScreen(),
+    MyPostTab(),
   ];
+
+  void onClick(BuildContext context)
+  {
+    Navigator.of(context).pushNamed('/profile');
+  }
   int _selectedPage = 0;
   @override
   Widget build(BuildContext context) {
@@ -34,7 +40,9 @@ class _MainPageState extends State<MainPage> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.account_circle,color: Colors.white,),
-            onPressed: (){},
+            onPressed: (){
+              onClick(context);
+            },
           ),
         ],
       ),
@@ -61,21 +69,7 @@ class _MainPageState extends State<MainPage> {
         child: FloatingActionButton.extended(
           label: Text('Create'),
           onPressed: () {
-            return showDialog(
-              context: context,
-              builder: (ctx) => SimpleDialog(
-                children: <Widget>[
-                  Container(
-                    height: MediaQuery.of(context).size.height * 0.65,
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    padding: EdgeInsets.all(10),
-                    child: ListView(
-                      children: <Widget>[],
-                    ),
-                  )
-                ],
-              ),
-            );
+            Navigator.of(context).pushNamed('/addpost');
           },
           icon: Icon(
             Icons.add,

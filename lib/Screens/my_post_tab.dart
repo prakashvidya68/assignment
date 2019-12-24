@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CreatePostScreen extends StatelessWidget {
+class MyPostTab extends StatelessWidget {
   final TextEditingController titleController = new TextEditingController();
   final TextEditingController bodyController = new TextEditingController();
 

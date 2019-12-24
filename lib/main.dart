@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import './Screens/tab_screen.dart';
+import './Screens/profile_screen.dart';
+import './Screens/add_post_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,6 +18,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => MyHomePage(),
+        '/profile':(context)=>ProfileScreen(),
+        '/addpost':(context)=>AddPostScreen(),
       },
     );
   }
