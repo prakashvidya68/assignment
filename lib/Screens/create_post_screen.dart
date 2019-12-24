@@ -50,6 +50,8 @@ class CreatePostScreen extends StatelessWidget {
           ),
         ),
       ],
-    ));
+    ),
+    
+    );
   }
 }
