@@ -27,10 +27,10 @@ class _MainPageState extends State<MainPage> {
     MyPostTab(),
   ];
 
-  void onClick(BuildContext context)
-  {
+  void onClick(BuildContext context) {
     Navigator.of(context).pushNamed('/profile');
   }
+
   int _selectedPage = 0;
   @override
   Widget build(BuildContext context) {
@@ -39,8 +39,11 @@ class _MainPageState extends State<MainPage> {
         title: Text('Hello'),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.account_circle,color: Colors.white,),
-            onPressed: (){
+            icon: Icon(
+              Icons.account_circle,
+              color: Colors.white,
+            ),
+            onPressed: () {
               onClick(context);
             },
           ),
@@ -64,14 +67,14 @@ class _MainPageState extends State<MainPage> {
           ),
         ],
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: Transform.scale(
         scale: 1.15,
-        child: FloatingActionButton.extended(
-          label: Text('Create'),
+        child: FloatingActionButton(
           onPressed: () {
             Navigator.of(context).pushNamed('/addpost');
           },
-          icon: Icon(
+          child: Icon(
             Icons.add,
           ),
         ),
